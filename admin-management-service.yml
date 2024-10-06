@@ -19,7 +19,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: #paymentNotificationRequest:com.jsl.payment_service.kafka.PaymentNotificationRequest
+        spring.json.type.mapping: emailNotification:com.jsl.admin_management_service.service.notification.EmailNotification
 
 server:
   port: 8075
@@ -35,3 +35,6 @@ application:
     question-bank-url: http://localhost:8222/api/v1/questions
   admin:
     registration-topic: registration
+  registration:
+    notification:
+      activation-url: http://localhost:4200/activate-account
