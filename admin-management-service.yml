@@ -32,7 +32,7 @@ application:
     expiration: 86400000
     code-length: 6
   config:
-    question-bank-url: http://localhost:8222/api/v1/questions
+    question-bank-url: http://localhost:8074/api/v1/questions
   admin:
     registration-topic: registration
     question-created-topic: created
