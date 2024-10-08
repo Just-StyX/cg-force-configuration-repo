@@ -19,7 +19,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: emailNotification:com.jsl.admin_management_service.service.notification.EmailNotification
+        spring.json.type.mapping: emailNotification:com.jsl.admin_management_service.service.notification.EmailNotification,questionCreatedNotification:com.jsl.admin_management_service.service.notification.QuestionCreatedNotification,questionUpdatedNotification:com.jsl.admin_management_service.service.notification.QuestionUpdatedNotification,questionDeletedNotification:com.jsl.admin_management_service.service.notification.QuestionDeletedNotification
 
 server:
   port: 8075
