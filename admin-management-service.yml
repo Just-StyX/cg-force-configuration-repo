@@ -35,6 +35,9 @@ application:
     question-bank-url: http://localhost:8222/api/v1/questions
   admin:
     registration-topic: registration
+    question-created-topic: created
+    question-updated-topic: updated
+    question-deleted-topic: deleted
   registration:
     notification:
       activation-url: http://localhost:4200/activate-account
