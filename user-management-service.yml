@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5435/admin-service
+    url: jdbc:postgresql://localhost:5435/user-service
     password: password
     username: username
   jpa:
@@ -19,26 +19,25 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: emailNotification:com.jsl.admin_management_service.service.notification.EmailNotification,questionCreatedNotification:com.jsl.admin_management_service.service.notification.QuestionCreatedNotification,questionUpdatedNotification:com.jsl.admin_management_service.service.notification.QuestionUpdatedNotification,questionDeletedNotification:com.jsl.admin_management_service.service.notification.QuestionDeletedNotification
+        spring.json.type.mapping: emailNotificationKafkaTemplate:com.jsl.user_management_service.service.notification.EmailNotification
 
 server:
-  port: 8075
+  port: 8076
 
 application:
   cors:
-    origins: http://localhost:4200
+    origins: http://localhost:4200,http://localhost:8075
   security:
     jwt-secret-key: 6b1f2f5a661d9579c80a12a03cfb7d287fc2343d9a5824aa5822246594b1f585
     expiration: 86400000
     code-length: 6
   config:
     question-bank-url: http://localhost:8074/api/v1/questions # change this for gateway service
-    user-management-url: http://localhost:8076/api/v1/user # change this for gateway service
-  admin:
-    registration-topic: admin-registration
-    question-created-topic: created
-    question-updated-topic: updated
-    question-deleted-topic: deleted
+  user:
+    registration-topic: user-registration
+    exam-started-topic: exam-started-created
+    exam-ended-topic: exam-ended-topic
+    payment-confirmation-topic: payment-confirmation
   registration:
     notification:
       activation-url: http://localhost:4200/activate-account
