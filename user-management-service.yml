@@ -35,8 +35,8 @@ application:
     question-bank-url: http://localhost:8074/api/v1/questions # change this for gateway service
   user:
     registration-topic: user-registration
-    exam-started-topic: exam-started-created
-    exam-ended-topic: exam-ended-topic
+    exam-started-topic: exam-started
+    exam-ended-topic: exam-ended
     payment-confirmation-topic: payment-confirmation
   registration:
     notification:
