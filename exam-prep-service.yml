@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5436/exam-prep-service
+    password: password
+    username: username
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        boot:
+          allow_jdbc_metadata_access: false
+
+server:
+  port: 8077
+
+application:
+  cors:
+    origins: http://localhost:4200,http://localhost:8075,http://localhost:8076
